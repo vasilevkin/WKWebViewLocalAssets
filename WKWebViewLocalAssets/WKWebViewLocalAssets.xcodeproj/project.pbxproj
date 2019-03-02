@@ -12,6 +12,7 @@
 		86ADADC2222A7162006BE546 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86ADADC0222A7162006BE546 /* Main.storyboard */; };
 		86ADADC4222A7164006BE546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86ADADC3222A7164006BE546 /* Assets.xcassets */; };
 		86ADADC7222A7164006BE546 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86ADADC5222A7164006BE546 /* LaunchScreen.storyboard */; };
+		86ADADCF222ADB8E006BE546 /* WebViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86ADADCE222ADB8E006BE546 /* WebViewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		86ADADC3222A7164006BE546 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86ADADC6222A7164006BE546 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		86ADADC8222A7164006BE546 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		86ADADCE222ADB8E006BE546 /* WebViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +59,7 @@
 				86ADADBC222A7162006BE546 /* AppDelegate.swift */,
 				86ADADBE222A7162006BE546 /* ViewController.swift */,
 				86ADADC0222A7162006BE546 /* Main.storyboard */,
+				86ADADCE222ADB8E006BE546 /* WebViewWrapper.swift */,
 				86ADADC3222A7164006BE546 /* Assets.xcassets */,
 				86ADADC5222A7164006BE546 /* LaunchScreen.storyboard */,
 				86ADADC8222A7164006BE546 /* Info.plist */,
@@ -137,6 +140,7 @@
 			files = (
 				86ADADBF222A7162006BE546 /* ViewController.swift in Sources */,
 				86ADADBD222A7162006BE546 /* AppDelegate.swift in Sources */,
+				86ADADCF222ADB8E006BE546 /* WebViewWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
