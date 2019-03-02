@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,31 +19,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFd-cR-5zO" customClass="WebViewWrapper" customModule="WKWebViewLocalAssets" customModuleProvider="target">
-                                <rect key="frame" x="8" y="28" width="359" height="573"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOd-hd-g27">
-                                <rect key="frame" x="8" y="609" width="359" height="50"/>
-                                <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="OMY-1B-ZxJ"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Run JavaScript">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Q7z-7A-05S">
+                                <rect key="frame" x="8" y="28" width="359" height="631"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iFd-cR-5zO" customClass="WebViewWrapper" customModule="WKWebViewLocalAssets" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="359" height="515"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="HPW-9p-Cad">
+                                        <rect key="frame" x="0.0" y="523" width="359" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Acb-HU-f7P">
+                                                <rect key="frame" x="0.0" y="0.0" width="175.5" height="50"/>
+                                                <color key="backgroundColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="JQX-2L-FeQ"/>
+                                                </constraints>
+                                                <state key="normal" title="Load html as File">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loadWebViewContentAsFile:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uMb-Kh-xXs"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vee-xL-8pB">
+                                                <rect key="frame" x="183.5" y="0.0" width="175.5" height="50"/>
+                                                <color key="backgroundColor" red="0.57919406890000003" green="0.1280144453" blue="0.57268613580000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="M0y-78-8Os"/>
+                                                </constraints>
+                                                <state key="normal" title="Load html as String">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="loadWebViewContentAsString:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jsP-oh-kfB"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOd-hd-g27">
+                                        <rect key="frame" x="0.0" y="581" width="359" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="OMY-1B-ZxJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Run JavaScript">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="iFd-cR-5zO" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="2vm-5R-gzE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iFd-cR-5zO" secondAttribute="trailing" constant="8" id="7LZ-a1-nnl"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="LOd-hd-g27" secondAttribute="bottom" constant="8" id="BCo-ma-qwQ"/>
-                            <constraint firstItem="iFd-cR-5zO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="UlD-VZ-RBB"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LOd-hd-g27" secondAttribute="trailing" constant="8" id="Xhs-Tb-mNX"/>
-                            <constraint firstItem="LOd-hd-g27" firstAttribute="top" secondItem="iFd-cR-5zO" secondAttribute="bottom" constant="8" id="cSj-fq-Rrd"/>
-                            <constraint firstItem="LOd-hd-g27" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="mN8-KL-Alg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Q7z-7A-05S" secondAttribute="bottom" constant="8" id="6EP-Kn-lo4"/>
+                            <constraint firstItem="Q7z-7A-05S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="GzO-vb-v9l"/>
+                            <constraint firstItem="Q7z-7A-05S" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="WGQ-0i-YQS"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Q7z-7A-05S" secondAttribute="trailing" constant="8" id="lcf-t2-dCt"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -52,6 +86,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="61.600000000000001" y="26.53673163418291"/>
         </scene>
     </scenes>
 </document>

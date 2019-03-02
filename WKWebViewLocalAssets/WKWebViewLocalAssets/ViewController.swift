@@ -45,7 +45,15 @@ class ViewController: UIViewController {
             }
         }
     }
-
+    
+    @IBAction func loadWebViewContentAsFile(_ sender: UIButton) {
+        loadWebViewContent("htmlAsFile", asFile: true)
+    }
+    
+    @IBAction func loadWebViewContentAsString(_ sender: UIButton) {
+        loadWebViewContent("htmlAsString", asFile: false)
+    }
+    
 }
 
 extension ViewController : WKNavigationDelegate {
