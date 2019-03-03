@@ -1,4 +1,10 @@
 # WKWebViewLocalAssets
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
+[![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
+
+
 Sample iOS app demonstrating WKWebView loading local html file (with css style and images) and calling Javascript code. 
 
 Language: Swift 4.2.
@@ -29,6 +35,7 @@ Language: Swift 4.2.
 
 ### Related blog posts:
 [Displaying large blocks of text in Swift](https://svasilevkin.wordpress.com/2019/03/03/displaying-large-blocks-of-text-in-swift/)
+
 [WKWebView disable magnification gesture and zoom changes](https://svasilevkin.wordpress.com/2019/03/03/wkwebview-disable-magnification-gesture-and-zoom-changes/)
 
 
