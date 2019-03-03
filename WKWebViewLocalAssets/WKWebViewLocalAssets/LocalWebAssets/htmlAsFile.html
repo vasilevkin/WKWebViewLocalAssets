@@ -1,1 +1,46 @@
-Load local html as file.
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <link href="css/local.css" rel="stylesheet" type="text/css">
+            </head>
+    <body>
+        <h1>WKWebView</h1>
+        <p><b>Local html examples.</b></p>
+        <p>Load local html as file.</p>
+
+        <h2>Fonts</h2>
+        <div id="demoFont1">Tahoma, 25px</div>
+        <div id="demoFont2">Arial, 15px, underline, italic</div>
+        <div id="demoFont3">Lucida, 18px, spreaded, Small caps, capitalize</div>
+        <div id="demoFont4">courier, 30px, fixed width, lowercase</div>
+        <div id="demoFont5">verdana, 23px, bold, condensed letters, condensed words, uppercase</div>
+        
+        <h3>Header h3</h3>
+        
+        <p><b>JavaScript execution:</b></p>
+        <ul>
+            <li>Add a ScriptMessageHandler "JavaScriptObserver" when the WKWebView is initialized at start up.</li>
+            <li>The "Run JavaScript" button calls the javascript function textMessageJS() embedded in this local html file.</li>
+            <li>postMessage(message) in the textMessageJS() calls the WKScriptMessageHandler delegate method didReceive message:</li>
+            <li>userContentController shows native iOS UIAlertController with a text from JavaScript script.</li>
+        </ul>
+            
+        <h2>Links</h2>
+        <p><a href="https://htmlg.com/html-editor/" rel="home">Online html editor</a></p>
+        <p><a href="https://html-css-js.com/css/editor/" rel="home">Online css editor</a></p>
+        <p><a href="https://html-css-js.com/css/generator/font/" rel="home">Font CSS Style Generator</a></p>
+
+        <p>My blog</p>
+        <p><a href="https://svasilevkin.wordpress.com/" rel="home">Passionate Mobile Development</a></p>
+            
+        <script>
+            function textMessageJS(){
+                var message = "JavaScript sample text message :)"
+                window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
+                return "Ok, successfull JavaScript execution!"
+            }
+        </script>
+    </body>
+</html>
+
+

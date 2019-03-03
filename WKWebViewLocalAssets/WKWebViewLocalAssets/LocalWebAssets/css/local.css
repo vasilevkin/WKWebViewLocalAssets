@@ -1,8 +1,82 @@
 body {
     font-family: Helvetica, Arial;
-    font-size:20px;
+    font-size: 20px;
     line-height: 25px;
-    margin:25px;
-    background:#eee;
-    color:#111;
+    margin: 25px;
+    background: #eee;
+    color: #111;
+}
+
+h3 {
+    font-family: Helvetica, Arial;
+    font-size: 20px;
+    line-height: 25px;
+    margin: 25px;
+    background: #585;
+    color: #1ee;
+}
+
+#demoFont1 {
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+}
+
+#demoFont2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #FF8F1F;
+    font-weight: 400;
+    text-decoration: underline;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: none;
+}
+
+#demoFont3 {
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 18px;
+    letter-spacing: 0px;
+    word-spacing: 6px;
+    color: #007217;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: capitalize;
+}
+
+#demoFont4 {
+    font-family: "Courier New", Courier, monospace;
+    font-size: 30px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+    color: #E5131A;
+    font-weight: 400;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: lowercase;
+}
+
+#demoFont5 {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 23px;
+    letter-spacing: -2px;
+    word-spacing: -2.6px;
+    color: #1A12FF;
+    font-weight: bold;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: uppercase;
 }
