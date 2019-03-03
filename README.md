@@ -25,9 +25,11 @@ Language: Swift 4.2.
 * Add ScriptMessageHandler in JavaScript
 * Callback from JavaScript
 * evaluateJavaScript errors handling
+* Disable / enable magnification gesture and zoom changes
 
-### Related blog post:
+### Related blog posts:
 [Displaying large blocks of text in Swift](https://svasilevkin.wordpress.com/2019/03/03/displaying-large-blocks-of-text-in-swift/)
+[WKWebView disable magnification gesture and zoom changes](https://svasilevkin.wordpress.com/2019/03/03/wkwebview-disable-magnification-gesture-and-zoom-changes/)
 
 
 ## Author
