@@ -12,6 +12,8 @@ import WebKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var webView: WebViewWrapper!
+    @IBOutlet weak var zoomButton: UIButton!
+    var zoomEnabled: Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +23,12 @@ class ViewController: UIViewController {
         // Add ScriptMessageHandler in JavaScript:
         // window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
         webView.configuration.userContentController.add(self, name: "JavaScriptObserver")
-        
+
         loadWebViewContent()
     }
     
     /// Load local html resource as File or as String
-    func loadWebViewContent(_ file: String = "index", asFile: Bool = true) {
+    private func loadWebViewContent(_ file: String = "index", asFile: Bool = true) {
         
         guard let filePath = Bundle.main.path(forResource: file, ofType: "html",
                                               inDirectory:  "LocalWebAssets") else {
@@ -56,6 +58,33 @@ class ViewController: UIViewController {
     
     @IBAction func loadWebViewContentAsString(_ sender: UIButton) {
         loadWebViewContent("htmlAsString", asFile: false)
+    }
+    
+    @IBAction func tapZoomButton(_ sender: UIButton) {
+       
+        if zoomEnabled {
+            zoomEnabled = false
+            zoomButton.setTitle("Zoom OFF", for: .normal)
+            zoomButton.backgroundColor = .red
+
+            // Disable zoom in web view
+            let source: String = "var meta = document.createElement('meta');" +
+                "meta.name = 'viewport';" +
+                "meta.content = 'width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no';" +
+                "var head = document.getElementsByTagName('head')[0];" + "head.appendChild(meta);"
+            let script: WKUserScript = WKUserScript(source: source, injectionTime: .atDocumentEnd,
+                                                    forMainFrameOnly: true)
+            webView.configuration.userContentController.addUserScript(script)
+            webView.reload()
+        } else {
+            zoomEnabled = true
+            zoomButton.setTitle("Zoom ON", for: .normal)
+            zoomButton.backgroundColor = .green
+
+            // Enable zoom in web view
+            webView.configuration.userContentController.removeAllUserScripts()
+            webView.reload()
+        }
     }
     
     @IBAction func tapRunJavascript(_ sender: UIButton) {
