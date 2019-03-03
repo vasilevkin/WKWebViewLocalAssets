@@ -67,6 +67,9 @@
                                         <state key="normal" title="Run JavaScript">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="tapRunJavascript:" destination="BYZ-38-t0r" eventType="touchUpInside" id="42e-C8-jzf"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

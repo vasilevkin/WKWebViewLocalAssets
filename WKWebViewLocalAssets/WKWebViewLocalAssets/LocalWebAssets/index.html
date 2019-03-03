@@ -1,1 +1,33 @@
-Base html resource.
+<html>
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <link href="css/local.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <h1>WKWebView</h1>
+        <p><b>Local html examples.</b></p>
+        
+        <img src="images/picture1.png" width="100">
+            
+        <p>Base html resource.</p>
+            
+        <p><b>JavaScript execution:</b></p>
+        <ul>
+            <li>Add a ScriptMessageHandler "JavaScriptObserver" when the WKWebView is initialized at start up.</li>
+            <li>The "Run JavaScript" button calls the javascript function textMessageJS() embedded in this local html file.</li>
+            <li>postMessage(message) in the textMessageJS() calls the WKScriptMessageHandler delegate method didReceive message:</li>
+            <li>userContentController shows native iOS UIAlertController with a text from JavaScript script.</li>
+        </ul>
+            
+        <h2>Links</h2>
+        <p>My blog&nbsp;<a href="https://svasilevkin.wordpress.com/" rel="home">Passionate Mobile Development</a></p>
+
+        <script>
+            function textMessageJS(){
+                var message = "JavaScript sample text message :)"
+                window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
+                return "Ok, successfull JavaScript execution!"
+            }
+        </script>
+    </body>
+</html>

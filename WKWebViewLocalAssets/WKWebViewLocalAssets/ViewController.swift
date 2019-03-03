@@ -18,6 +18,10 @@ class ViewController: UIViewController {
         
         webView.navigationDelegate = self
         
+        // Add ScriptMessageHandler in JavaScript:
+        // window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
+        webView.configuration.userContentController.add(self, name: "JavaScriptObserver")
+        
         loadWebViewContent()
     }
     
@@ -26,8 +30,8 @@ class ViewController: UIViewController {
         
         guard let filePath = Bundle.main.path(forResource: file, ofType: "html",
                                               inDirectory:  "LocalWebAssets") else {
-            print("Unable to load local html file: \(file)")
-            return
+                                                print("Unable to load local html file: \(file)")
+                                                return
         }
         
         if asFile {
@@ -54,10 +58,36 @@ class ViewController: UIViewController {
         loadWebViewContent("htmlAsString", asFile: false)
     }
     
+    @IBAction func tapRunJavascript(_ sender: UIButton) {
+        let script = "textMessageJS()"
+        webView.evaluateJavaScript(script) { (result: Any?, error: Error?) in
+            if let error = error {
+                print("evaluateJavaScript error: \(error.localizedDescription)")
+            } else {
+                print("evaluateJavaScript result: \(result ?? "")")
+            }
+        }
+    }
+
 }
 
 extension ViewController : WKNavigationDelegate {
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        print("Delegate method didFinish navigation:");
+        print("Delegate method didFinish navigation:")
+    }
+}
+
+extension ViewController : WKScriptMessageHandler {
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        // Callback from JavaScript:
+        // window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
+        let text = message.body as? String
+        let alertController = UIAlertController(title: "Message from JavaScript",
+                                                message: text, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default) { action in
+            print("OK")
+        }
+        alertController.addAction(okAction)
+        present(alertController, animated: true, completion: nil)
     }
 }
