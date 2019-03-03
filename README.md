@@ -6,6 +6,7 @@ Language: Swift 4.2.
 ![FontsExample](Images/FontsExample.png)
 ![ImagesExample](Images/ImagesExample.png)
 ![JavaScriptMessage](Images/JavaScriptMessage.png)
+![ExternalLinks](Images/ExternalLinks.png)
 
 ### Html + css examples:
 
@@ -16,6 +17,7 @@ Language: Swift 4.2.
 * Display local images
 * Load local html web asset as file
 * Load local html web asset as string
+* External links
 
 ### JavaScript examples:
 
