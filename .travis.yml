@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10.1
+xcode_project: WKWebViewLocalAssets/WKWebViewLocalAssets/WKWebViewLocalAssets.xcodeproj
+xcode_scheme: WKWebViewLocalAssets
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone X

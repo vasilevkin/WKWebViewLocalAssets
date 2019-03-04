@@ -1,5 +1,6 @@
 # WKWebViewLocalAssets
 
+[![Travis CI](https://travis-ci.org/vasilevkin/WKWebViewLocalAssets.svg?branch=master)](https://travis-ci.org/vasilevkin/WKWebViewLocalAssets)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Platforms](https://img.shields.io/badge/platform-iOS-lightgrey.svg)
 [![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
