@@ -2,31 +2,24 @@
     <head>
         <meta name="viewport" content="initial-scale=1.0" />
         <link href="css/local.css" rel="stylesheet" type="text/css">
-    </head>
+            </head>
     <body>
-        <h1>WKWebView</h1>
-        <p><b>Local html examples.</b></p>
+        <h1>Feedback</h1>
         
-        <img src="images/picture1.jpg" width="100">
-
-        <p>Base html resource.</p>
-            
-        <p><b>JavaScript execution:</b></p>
-        <ul>
-            <li>Add a ScriptMessageHandler "JavaScriptObserver" when the WKWebView is initialized at start up.</li>
-            <li>The "Run JavaScript" button calls the javascript function textMessageJS() embedded in this local html file.</li>
-            <li>postMessage(message) in the textMessageJS() calls the WKScriptMessageHandler delegate method didReceive message:</li>
-            <li>userContentController shows native iOS UIAlertController with a text from JavaScript script.</li>
-        </ul>
+        <p>Hi, I'm <a href="https://svasilevkin.wordpress.com/" rel="home">Sergey</a>. </p>
+        <p>Feedback is welcome:</p>
+        <p><a href="https://mobile.twitter.com/vasilevkin" target="_blank" rel="noopener">@vasilevkin</a> on Twitter for quick comments.</p>
+        <p><a href="mailto:svasilevkin@gmail.com">svasilevkin@gmail.com</a> for private feedback.</p>
+        <p>I try to read every message, but I can't respond to them all. Thank you for understanding.</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
         <h4>Local Pages</h4>
-
         <p><a href="htmlAsFile.html" rel="home">Load html as file</a></p>
         <p><a href="htmlAsString.html" rel="home">Load html as string</a></p>
         <p><a href="index.html" rel="home">Start page</a></p>
-        
+
         <h4>Feedback</h4>
-        
         <p><a href="Feedback.html" rel="home">Send me a feedback</a></p>
 
         <h2>External Links</h2>
@@ -35,7 +28,7 @@
 
         <script>
             function textMessageJS(){
-                var message = "JavaScript sample text message :)"
+                var message = "Please send me some feedback!"
                 window.webkit.messageHandlers.JavaScriptObserver.postMessage(message)
                 return "Ok, successfull JavaScript execution!"
             }
