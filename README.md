@@ -6,6 +6,9 @@
 [![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg?style=flat)](https://developer.apple.com/swift/)
 
 
+[The same Sample iOS app in Objective C.](https://github.com/vasilevkin/WKWebViewLocalAssetsObjC)
+
+
 Sample iOS app demonstrating WKWebView loading local html file (with css style and images) and calling Javascript code.
 
 Language: Swift 4.2.
