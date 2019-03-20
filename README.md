@@ -29,7 +29,7 @@
 </div>
 
 <div align="center">
-<sub>Crafted with ❤︎ by Sergey Vasilevkin </sub>
+<sub><a href="https://svasilevkin.wordpress.com/">Crafted with ❤︎ by Sergey Vasilevkin</a></sub>
 </div>
 
 <br />
